@@ -12,3 +12,11 @@ patches:
   - path: frontend-replica-patch.yaml
   - path: backend-resource-patch.yaml
   - path: frontend-resource-patch.yaml
+
+images:
+  - name: kubepilot-backend
+    newName: ghcr.io/Ghanathey-Neelesh-Kumar/kubepilot-backend
+    newTag: dev
+  - name: kubepilot-frontend
+    newName: ghcr.io/Ghanathey-Neelesh-Kumar/kubepilot-frontend
+    newTag: dev
