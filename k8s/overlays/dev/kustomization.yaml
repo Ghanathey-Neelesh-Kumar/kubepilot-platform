@@ -4,19 +4,19 @@ kind: Kustomization
 namespace: kubepilot-dev
 
 resources:
-  - ../../base
+- ../../base
 
 patches:
-  - path: namespace-patch.yaml
-  - path: backend-replica-patch.yaml
-  - path: frontend-replica-patch.yaml
-  - path: backend-resource-patch.yaml
-  - path: frontend-resource-patch.yaml
+- path: namespace-patch.yaml
+- path: backend-replica-patch.yaml
+- path: frontend-replica-patch.yaml
+- path: backend-resource-patch.yaml
+- path: frontend-resource-patch.yaml
 
 images:
-  - name: kubepilot-backend
-    newName: ghcr.io/Ghanathey-Neelesh-Kumar/kubepilot-backend
-    newTag: dev
-  - name: kubepilot-frontend
-    newName: ghcr.io/Ghanathey-Neelesh-Kumar/kubepilot-frontend
-    newTag: dev
+- name: kubepilot-backend
+  newName: ghcr.io/ghanathey-neelesh-kumar/kubepilot-backend
+  newTag: 2c8bad2
+- name: kubepilot-frontend
+  newName: ghcr.io/ghanathey-neelesh-kumar/kubepilot-frontend
+  newTag: 2c8bad2
