@@ -16,7 +16,7 @@ permissions:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_OWNER: Ghanathey-Neelesh-Kumar
+  IMAGE_OWNER: ghanathey-neelesh-kumar
   BACKEND_IMAGE: kubepilot-backend
   FRONTEND_IMAGE: kubepilot-frontend
 
