@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kubepilot-config
+  namespace: kubepilot
+  labels:
+    app.kubernetes.io/name: kubepilot
+    app.kubernetes.io/component: config
+data:
+  DB_HOST: kubepilot-postgres
+  DB_NAME: kubepilot
+  DB_PORT: "5432"

@@ -41,7 +41,7 @@ services:
       context: ./apps/frontend
     container_name: kubepilot-frontend
     ports:
-      - "8081:80"
+      - "8081:8080"
     depends_on:
       - backend
     networks:
