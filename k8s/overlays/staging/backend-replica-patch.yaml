@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: kubepilot-frontend
+  name: kubepilot-backend
   namespace: kubepilot
 spec:
   replicas: 2
