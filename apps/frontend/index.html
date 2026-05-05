@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>KubePilot Platform</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #07111f;
+      color: #ffffff;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 30px;
+      background: #0f1f35;
+      border-radius: 16px;
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.15);
+    }
+
+    .badge {
+      display: inline-block;
+      background: #38bdf8;
+      color: #07111f;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      color: #38bdf8;
+      font-size: 44px;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      color: #cbd5e1;
+      margin-bottom: 30px;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .card {
+      background: #132940;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      border-left: 5px solid #22c55e;
+    }
+
+    input {
+      padding: 12px;
+      width: 70%;
+      border-radius: 8px;
+      border: none;
+      margin-right: 10px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 12px 18px;
+      border: none;
+      border-radius: 8px;
+      background: #22c55e;
+      color: #07111f;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background: #16a34a;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      background: #071827;
+      margin-bottom: 10px;
+      padding: 14px;
+      border-radius: 8px;
+      border-left: 4px solid #38bdf8;
+    }
+
+    .status {
+      margin-top: 20px;
+      color: #facc15;
+    }
+
+    .footer {
+      margin-top: 30px;
+      color: #94a3b8;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <span class="badge">DevSecOps Platform Demo</span>
+
+    <h1>KubePilot</h1>
+
+    <p class="subtitle">
+      A mini Internal Developer Platform built with Kubernetes, GitOps, Security,
+      Observability and Troubleshooting workflows.
+    </p>
+
+    <div class="card">
+      <h2>Create Platform Task</h2>
+      <input id="taskInput" type="text" placeholder="Example: Deploy backend service using GitOps">
+      <button onclick="createTask()">Add Task</button>
+      <p id="status" class="status"></p>
+    </div>
+
+    <div class="card">
+      <h2>Platform Tasks</h2>
+      <ul id="taskList"></ul>
+    </div>
+
+    <div class="footer">
+      KubePilot v1 — Local Docker Compose version
+    </div>
+  </div>
+
+  <script>
+    const API_URL = "/api/tasks";
+
+    async function fetchTasks() {
+      try {
+        const response = await fetch(API_URL);
+        const tasks = await response.json();
+
+        const taskList = document.getElementById("taskList");
+        taskList.innerHTML = "";
+
+        if (tasks.length === 0) {
+          taskList.innerHTML = "<li>No tasks yet. Create your first platform task.</li>";
+          return;
+        }
+
+        tasks.forEach(task => {
+          const li = document.createElement("li");
+          li.innerHTML = `<strong>${task.title}</strong><br>Status: ${task.status}`;
+          taskList.appendChild(li);
+        });
+
+      } catch (error) {
+        document.getElementById("status").innerText = "Could not fetch tasks from backend.";
+      }
+    }
+
+    async function createTask() {
+      const input = document.getElementById("taskInput");
+      const title = input.value.trim();
+
+      if (!title) {
+        document.getElementById("status").innerText = "Please enter a task.";
+        return;
+      }
+
+      try {
+        const response = await fetch(API_URL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ title })
+        });
+
+        if (!response.ok) {
+          throw new Error("Failed to create task");
+        }
+
+        input.value = "";
+        document.getElementById("status").innerText = "Task created successfully.";
+        fetchTasks();
+
+      } catch (error) {
+        document.getElementById("status").innerText = "Could not create task.";
+      }
+    }
+
+    fetchTasks();
+  </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: kubepilot-db
+    environment:
+      POSTGRES_DB: kubepilot
+      POSTGRES_USER: kubepilot
+      POSTGRES_PASSWORD: kubepilot
+    ports:
+      - "5432:5432"
+    volumes:
+      - kubepilot-db-data:/var/lib/postgresql/data
+    networks:
+      - kubepilot-net
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U kubepilot -d kubepilot"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: ./apps/backend
+    container_name: kubepilot-backend
+    environment:
+      DB_HOST: db
+      DB_NAME: kubepilot
+      DB_USER: kubepilot
+      DB_PASSWORD: kubepilot
+      DB_PORT: 5432
+    ports:
+      - "5000:5000"
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - kubepilot-net
+
+  frontend:
+    build:
+      context: ./apps/frontend
+    container_name: kubepilot-frontend
+    ports:
+      - "8081:80"
+    depends_on:
+      - backend
+    networks:
+      - kubepilot-net
+
+volumes:
+  kubepilot-db-data:
+
+networks:
+  kubepilot-net:
+    driver: bridge
