@@ -21,3 +21,32 @@ Kyverno is a Kubernetes-native policy engine. Policies are written as Kubernetes
 
 ```bash
 kubectl apply -f platform/kyverno/policies/
+
+
+# Observability
+
+KubePilot includes a production-style observability stack for metrics, logs, dashboards, and alerts.
+
+## Components
+
+| Component | Purpose |
+|---|---|
+| Prometheus | Collects metrics |
+| Grafana | Visualizes metrics and logs |
+| Alertmanager | Handles alerts |
+| Loki | Stores logs |
+| Grafana Alloy | Collects Kubernetes pod logs and sends them to Loki |
+
+## Metrics Flow
+
+```text
+KubePilot Backend /metrics
+        |
+        v
+ServiceMonitor
+        |
+        v
+Prometheus
+        |
+        v
+Grafana Dashboard
