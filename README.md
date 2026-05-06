@@ -635,36 +635,6 @@ A recommended demo flow for interviews, LinkedIn, or YouTube:
 
 ---
 
-## Screenshots
-
-Add screenshots inside:
-
-```text
-docs/images/
-```
-
-Recommended screenshots:
-
-| Screenshot              | Suggested File Name           |
-| ----------------------- | ----------------------------- |
-| Architecture diagram    | `kubepilot-architecture.png`  |
-| KubePilot UI            | `kubepilot-ui.png`            |
-| Argo CD apps            | `argocd-apps.png`             |
-| GitHub Actions pipeline | `github-actions-pipeline.png` |
-| GHCR packages           | `ghcr-packages.png`           |
-| Grafana dashboard       | `grafana-dashboard.png`       |
-| Loki logs               | `loki-logs.png`               |
-| Kyverno policy block    | `kyverno-block.png`           |
-| KubePilot Doctor output | `kubepilot-doctor-output.png` |
-
-Example markdown:
-
-```md
-![Argo CD Applications](docs/images/argocd-apps.png)
-```
-
----
-
 ## Skills Demonstrated
 
 This project demonstrates practical experience in:
