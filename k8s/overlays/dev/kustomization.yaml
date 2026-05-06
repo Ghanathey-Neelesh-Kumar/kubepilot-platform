@@ -16,7 +16,7 @@ patches:
 images:
 - name: kubepilot-backend
   newName: ghcr.io/ghanathey-neelesh-kumar/kubepilot-backend
-  newTag: ccad7e1
+  newTag: f979dfa
 - name: kubepilot-frontend
   newName: ghcr.io/ghanathey-neelesh-kumar/kubepilot-frontend
-  newTag: ccad7e1
+  newTag: f979dfa
