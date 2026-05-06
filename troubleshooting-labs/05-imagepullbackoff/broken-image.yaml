@@ -1,0 +1,33 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: imagepull-broken-app
+  namespace: kubepilot-dev
+  labels:
+    app.kubernetes.io/name: kubepilot
+    app.kubernetes.io/component: imagepull-broken-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: kubepilot
+      app.kubernetes.io/component: imagepull-broken-app
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: kubepilot
+        app.kubernetes.io/component: imagepull-broken-app
+    spec:
+      containers:
+        - name: broken
+          image: ghcr.io/does-not-exist/kubepilot-backend:missing-tag
+          ports:
+            - containerPort: 5000
+          resources:
+            requests:
+              cpu: 25m
+              memory: 32Mi
+            limits:
+              cpu: 100m
+              memory: 128Mi
