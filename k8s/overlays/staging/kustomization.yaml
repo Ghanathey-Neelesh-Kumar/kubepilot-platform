@@ -12,3 +12,11 @@ patches:
   - path: frontend-replica-patch.yaml
   - path: backend-resource-patch.yaml
   - path: frontend-resource-patch.yaml
+
+images:
+  - name: kubepilot-backend
+    newName: ghcr.io/ghanathey-neelesh-kumar/kubepilot-backend
+    newTag: ca54a75
+  - name: kubepilot-frontend
+    newName: ghcr.io/ghanathey-neelesh-kumar/kubepilot-frontend
+    newTag: ca54a75 
