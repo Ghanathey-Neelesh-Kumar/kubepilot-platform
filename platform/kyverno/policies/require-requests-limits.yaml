@@ -7,7 +7,7 @@ metadata:
     policies.kyverno.io/category: Best Practices
     policies.kyverno.io/severity: medium
     policies.kyverno.io/subject: Pod
-    policies.kyverno.io/description: CPU and memory requests and limits are required for all containers.
+    policies.kyverno.io/description: CPU and memory requests and limits are required for all application containers.
 spec:
   validationFailureAction: Enforce
   background: true
@@ -18,6 +18,10 @@ spec:
           - resources:
               kinds:
                 - Pod
+              namespaces:
+                - kubepilot-dev
+                - kubepilot-staging
+                - kubepilot-prod
       validate:
         message: "CPU and memory requests and limits are required for all containers."
         pattern:

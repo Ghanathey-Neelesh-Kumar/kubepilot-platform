@@ -1,0 +1,29 @@
+grafana:
+  enabled: true
+  adminUser: admin
+  adminPassword: admin123
+
+  service:
+    type: ClusterIP
+
+  defaultDashboardsEnabled: true
+
+prometheus:
+  prometheusSpec:
+    retention: 7d
+    scrapeInterval: 30s
+    evaluationInterval: 30s
+    serviceMonitorSelectorNilUsesHelmValues: false
+    podMonitorSelectorNilUsesHelmValues: false
+    ruleSelectorNilUsesHelmValues: false
+
+alertmanager:
+  enabled: true
+  alertmanagerSpec:
+    retention: 120h
+
+kubeStateMetrics:
+  enabled: true
+
+nodeExporter:
+  enabled: true
