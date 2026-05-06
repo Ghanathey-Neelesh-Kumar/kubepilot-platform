@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: bad-privileged-pod
+  namespace: kubepilot-dev
+spec:
+  containers:
+    - name: nginx
+      image: nginx:1.27-alpine
+      securityContext:
+        privileged: true

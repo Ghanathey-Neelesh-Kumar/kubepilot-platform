@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: bad-latest-no-resources
+  namespace: kubepilot-dev
+spec:
+  containers:
+    - name: nginx
+      image: nginx:latest
