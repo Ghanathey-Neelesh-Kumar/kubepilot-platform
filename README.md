@@ -157,6 +157,52 @@ docs/architecture.md
 | Troubleshooting          | KubePilot Doctor Python CLI               |
 
 ---
+## Project Screenshots
+
+### KubePilot Application Running
+
+![KubePilot Application](docs/images/01-kubepilot-app.png)
+
+### GitHub Actions CI/CD Pipeline
+
+![GitHub Actions Pipeline](docs/images/02-github-actions-success.png)
+
+### GHCR Container Images
+
+![GHCR Packages](docs/images/03-ghcr-packages.png)
+
+### Argo CD Applications
+
+![Argo CD Applications](docs/images/04-argocd-apps.png)
+
+### Dev Environment Synced in Argo CD
+
+![Argo CD Dev Environment](docs/images/05-argocd-dev-synced.png)
+
+### Staging Environment Healthy
+
+![Argo CD Staging Environment](docs/images/06-argocd-staging-healthy.png)
+
+### Production Environment Healthy
+
+![Argo CD Production Environment](docs/images/07-argocd-prod-healthy.png)
+
+### Grafana Observability Dashboard
+
+![Grafana Dashboard](docs/images/08-grafana-dashboard.png)
+
+### Loki Logs
+
+![Loki Logs](docs/images/09-loki-logs.png)
+
+### Kyverno Policies
+
+![Kyverno Policies](docs/images/10-kyverno-policies.png)
+
+### KubePilot Doctor CLI
+
+![KubePilot Doctor](docs/images/11-kubepilot-doctor.png)
+
 
 ## Key Features
 
