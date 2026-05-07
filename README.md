@@ -1,3 +1,9 @@
+![Kubernetes](https://img.shields.io/badge/Kubernetes-Platform-blue)
+![GitOps](https://img.shields.io/badge/GitOps-Argo%20CD-orange)
+![CI/CD](https://img.shields.io/badge/CI%2FCD-GitHub%20Actions-black)
+![Security](https://img.shields.io/badge/Security-Kyverno%20%2B%20Trivy-green)
+![Observability](https://img.shields.io/badge/Observability-Prometheus%20%2B%20Grafana-red)
+
 # KubePilot — DevSecOps Platform on Kubernetes
 
 ![KubePilot Architecture](docs/images/kubepilot-architecture.png)
