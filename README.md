@@ -2,6 +2,22 @@
 
 ![KubePilot Architecture](docs/images/kubepilot-architecture.png)
 
+## Why This Project Matters
+
+KubePilot simulates how a real platform team would deliver an application to Kubernetes using modern DevOps practices.
+
+It demonstrates:
+
+- CI/CD automation with GitHub Actions
+- GitOps deployment using Argo CD
+- Multi-environment promotion using Kustomize
+- Container image scanning with Trivy
+- Kubernetes policy enforcement with Kyverno
+- Metrics, logs, dashboards, and alerts
+- Real-world troubleshooting scenarios
+- Custom Kubernetes diagnostic tooling
+
+
 ## Overview
 
 **KubePilot** is a production-style DevSecOps and Platform Engineering project built on Kubernetes.
