@@ -159,50 +159,37 @@ docs/architecture.md
 ---
 ## Project Screenshots
 
-### KubePilot Application Running
+### KubePilot Architecture
 
-![KubePilot Application](docs/images/01-kubepilot-app.png)
+![KubePilot Architecture](docs/images/kubepilot-architecture.png)
+
+### KubePilot Application UI
+
+![KubePilot UI](docs/images/kubepilot-ui.png)
 
 ### GitHub Actions CI/CD Pipeline
 
-![GitHub Actions Pipeline](docs/images/02-github-actions-success.png)
-
-### GHCR Container Images
-
-![GHCR Packages](docs/images/03-ghcr-packages.png)
+![GitHub Actions Pipeline](docs/images/github-actions-pipeline.png)
 
 ### Argo CD Applications
 
-![Argo CD Applications](docs/images/04-argocd-apps.png)
+![Argo CD Apps](docs/images/argocd-apps.png)
 
-### Dev Environment Synced in Argo CD
+### Prometheus Targets
 
-![Argo CD Dev Environment](docs/images/05-argocd-dev-synced.png)
+![Prometheus Targets](docs/images/prometheus-targets.png)
 
-### Staging Environment Healthy
+### Grafana Dashboard
 
-![Argo CD Staging Environment](docs/images/06-argocd-staging-healthy.png)
-
-### Production Environment Healthy
-
-![Argo CD Production Environment](docs/images/07-argocd-prod-healthy.png)
-
-### Grafana Observability Dashboard
-
-![Grafana Dashboard](docs/images/08-grafana-dashboard.png)
+![Grafana Dashboard](docs/images/grafana-dashboard.png)
 
 ### Loki Logs
 
-![Loki Logs](docs/images/09-loki-logs.png)
+![Loki Logs](docs/images/loki-logs.png)
 
-### Kyverno Policies
+### KubePilot Doctor Output
 
-![Kyverno Policies](docs/images/10-kyverno-policies.png)
-
-### KubePilot Doctor CLI
-
-![KubePilot Doctor](docs/images/11-kubepilot-doctor.png)
-
+![KubePilot Doctor Output](docs/images/kubepilot-doctor-output.png)
 
 ## Key Features
 
